@@ -348,16 +348,47 @@ namespace Cyz2Json
             measurementResults["particleCount"] = dfw.MeasurementInfo.NumberofCountedParticles;
             measurementResults["particlesInFileCount"] = dfw.MeasurementInfo.NumberofSavedParticles;
             measurementResults["pictureCount"] = dfw.MeasurementInfo.NumberOfPictures;
-            measurementResults["pumped_volume"] = dfw.pumpedVolume; // muL
-            measurementResults["analysed_volume"] = dfw.analyzedVolume; // muL
+            measurementResults["pumpedVolume"] = dfw.pumpedVolume; // muL
+            measurementResults["analysedVolume"] = dfw.analyzedVolume; // muL
             measurementResults["particleConcentration"] = dfw.Concentration; // n/muL
 
             // Auxiliary Sensor Data
 
             measurementResults["systemTemperature"] = dfw.MeasurementInfo.SystemTemp; // C
+            measurementResults["systemTemperaturePerSec"] = dfw.MeasurementInfo.sensorLogs.SystemTemp; // C
             measurementResults["sheathTemperature"] = dfw.MeasurementInfo.SheathTemp; // C
-            measurementResults["absolutePressure"] = dfw.MeasurementInfo.ABSPressure; // mbar
-            measurementResults["differentialPressure"] = dfw.MeasurementInfo.DiffPressure; // mbar
+            measurementResults["sheathTemperaturePerSec"] = dfw.MeasurementInfo.sensorLogs.SheathTemp; // C
+            measurementResults["pressureAbsolute"] = dfw.MeasurementInfo.ABSPressure; // mbar
+            measurementResults["pressureDifferential"] = dfw.MeasurementInfo.DiffPressure; // mbar
+            measurementResults["PMTtemperature"] = dfw.MeasurementInfo.PMTTemp; //C
+            measurementResults["PMTtemperaturePerSec"] = dfw.MeasurementInfo.sensorLogs.PMTTemp; //C
+            measurementResults["buoyTemperature"] = dfw.MeasurementInfo.BuoyTemp; //C
+            measurementResults["buoyTemperaturePerSec"] = dfw.MeasurementInfo.sensorLogs.BuoyTemp; //C
+            measurementResults["referenceVoltageRatioAvrg"] = dfw.MeasurementInfo.VRefFactor;
+            measurementResults["referenceVoltageRatio"] = dfw.MeasurementInfo.sensorLogs.VRefFactor;
+            measurementResults["extSupplyPowerVoltage"] = dfw.MeasurementInfo.sensorLogs.extSupplyPowerVoltage; //V
+            measurementResults["buoyVoltage"] = dfw.MeasurementInfo.sensorLogs.BuoyExtBatteryVoltage; //V
+            measurementResults["pressureExt"] = dfw.MeasurementInfo.sensorLogs.extPressure; //bar
+            measurementResults["filterPressure"] = dfw.MeasurementInfo.sensorLogs.ExternalFiltersPressureData; //mbar
+            measurementResults["intVoltageAvrg"] = dfw.MeasurementInfo.intVoltage; //V
+            measurementResults["intVoltage"] = dfw.MeasurementInfo.sensorLogs.intVoltage; //V
+            measurementResults["rechargeCurrentAvrg"] = dfw.MeasurementInfo.internalRecharge; //mA
+            measurementResults["rechargeCurrent"] = dfw.MeasurementInfo.sensorLogs.internalRecharge; //mA
+
+            // Laser Data
+            measurementResults["laserTemperature"] = dfw.MeasurementInfo.LaserTemp; // C
+            measurementResults["laserTemperaturePerSec"] = dfw.MeasurementInfo.sensorLogs.LaserTemp; //C
+            measurementResults["laser1BaseTemperature"] = dfw.MeasurementInfo.Laser1BaseTemperature; //C
+            measurementResults["laser1BaseTemperaturePerSec"] = dfw.MeasurementInfo.sensorLogs.Laser1BaseTemperature; //C
+            measurementResults["laser1DiodeTemperature"] = dfw.MeasurementInfo.Laser1DiodeTemperature; //C
+            measurementResults["laser1DiodeTemperaturePerSec"] = dfw.MeasurementInfo.sensorLogs.Laser1DiodeTemperature; //C
+            measurementResults["laser1DiodeCurrent"] = dfw.MeasurementInfo.Laser1DiodeCurrent; //mA
+            measurementResults["laser1DiodeCurrentPerSec"] = dfw.MeasurementInfo.sensorLogs.Laser1DiodeCurrent; //mA
+            measurementResults["laser1TECLoad"] = dfw.MeasurementInfo.Laser1TecLoad; //%
+            measurementResults["laser1TECLoadPerSec"] = dfw.MeasurementInfo.sensorLogs.Laser1TecLoad; //%
+            measurementResults["laser1InputVoltage"] = dfw.MeasurementInfo.Laser1InputVoltage; //V
+            measurementResults["laser1InputVoltagePerSec"] = dfw.MeasurementInfo.sensorLogs.Laser1InputVoltage; //V
+            measurementResults["laser1Mode"] = dfw.MeasurementInfo.Laser1Mode;
 
             return measurementResults;
         }
